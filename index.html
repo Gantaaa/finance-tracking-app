@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — finance-tracking-app</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbfaf8;
+    --ink: #1b1a17;
+    --muted: #65635c;
+    --line: #e4e2da;
+    --accent: #9a3412;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17160f;
+      --ink: #f3f1ea;
+      --muted: #a6a398;
+      --line: #35331f;
+      --accent: #f0a380;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+  }
+  .updated {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 28px;
+  }
+  .lede {
+    font-size: 17px;
+    margin: 0 0 32px;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 650;
+    margin: 40px 0 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  h3 {
+    font-size: 15px;
+    font-weight: 650;
+    margin: 20px 0 8px;
+  }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin: 0 0 6px; }
+  strong { font-weight: 650; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 0 0 16px;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  th { color: var(--muted); font-weight: 600; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.92em;
+    background: var(--line);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+  a { color: var(--accent); }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy — finance-tracking-app</h1>
+  <p class="updated">Last updated: 13 November 2026</p>
+
+  <p class="lede">
+    finance-tracking-app helps you see where your money goes by reading bank statements you choose
+    to import. This policy describes exactly what the app collects, where it goes, and
+    what it never does. If you do not agree with this policy, do not use the app.
+  </p>
+
+  <h2>What the app collects</h2>
+
+  <p><strong>Your account.</strong> You sign in with Apple or Google. We store the account
+  identifier issued by our authentication provider and the email address that provider
+  supplies. We never see or store your Apple or Google password.</p>
+
+  <p><strong>Bank statements you import.</strong> When you import a statement, the file is
+  uploaded to our server, read, and the transactions inside it are saved to your account.</p>
+
+  <p><strong>The uploaded file itself is not kept.</strong> It is parsed in memory and
+  discarded when the request finishes. We retain only a record <em>about</em> the import —
+  the filename, which bank it came from, how many rows were read, how many were new, and
+  any error — so the app can show you what you imported and detect duplicates.</p>
+
+  <p><strong>Transactions from those statements.</strong> For each transaction we store the
+  date, the amount and currency, the description exactly as the bank printed it, the
+  running balance where the bank supplies one, and where present the counterparty account
+  number, the merchant name, and the card-network category description.</p>
+
+  <p><strong>Your corrections.</strong> When you assign a category to a transaction or give
+  a counterparty a name such as "Mom" or "Rent", we store that so future transactions can
+  use it.</p>
+
+  <h2>What the app does not collect</h2>
+  <ul>
+    <li>No location data</li>
+    <li>No contacts, photos, or device identifiers for tracking</li>
+    <li>No advertising identifiers; the app contains <strong>no advertising or analytics
+      SDKs</strong></li>
+    <li>No banking credentials. The app never asks for your online banking login and has
+      no ability to connect to your bank. Importing a file is the only way data enters the
+      app.</li>
+  </ul>
+
+  <h2>Where your data is processed</h2>
+
+  <p>The app is operated from Mongolia, and the services it relies on run outside
+  Mongolia. <strong>By using the app you consent to your personal data being transferred
+  to and processed in the countries listed below</strong>, as required by Mongolia's Law
+  on Personal Data Protection.</p>
+
+  <table>
+    <tr><th>Service</th><th>Purpose</th><th>Location</th></tr>
+    <tr><td><strong>Supabase</strong></td><td>Authentication and database</td><td>Seoul, South Korea</td></tr>
+    <tr><td><strong>Google Cloud Run</strong></td><td>Runs the application server</td><td>Seoul, South Korea</td></tr>
+    <tr><td><strong>Anthropic (Claude)</strong></td><td>Identifies unknown merchant names</td><td>United States</td></tr>
+  </table>
+
+  <h3>What is sent to the AI service, and what is not</h3>
+
+  <p>To work out that <code>KFC BUSINESS PLAZA</code> is a restaurant, the app sends
+  <strong>merchant name text only</strong> to Anthropic's API.</p>
+
+  <p>It never sends:</p>
+  <ul>
+    <li><strong>amounts or balances</strong></li>
+    <li><strong>dates</strong></li>
+    <li><strong>counterparty account numbers</strong></li>
+    <li><strong>your account identifier, email, or any way to link a merchant name back to
+      you</strong></li>
+  </ul>
+
+  <p>It is also restricted in <em>which</em> rows may be sent at all. Only a row that
+  <strong>the bank itself marked as a card purchase at a merchant</strong> is eligible.
+  Person-to-person transfers are never sent, because in Mongolia a transfer description is
+  usually a person's name, and no automatic rule can reliably tell a person's name from a
+  shop's name. The restriction is an allow-list: anything that does not clearly qualify is
+  excluded.</p>
+
+  <p>Anthropic processes this text to return a category and does not use it to train
+  models.</p>
+
+  <h2>What is shared between users, and what never is</h2>
+
+  <p><strong>Merchant names are shared.</strong> When the app learns that a normalized
+  merchant string such as <code>nomin supermarket</code> means "Groceries," that pairing is
+  stored in a dictionary shared by all users, so nobody's app has to work it out twice.
+  This dictionary contains <strong>only the merchant text and the category</strong> — no
+  amounts, no dates, no user identifiers. A shop is a business, not a person.</p>
+
+  <p><strong>Counterparty labels are never shared.</strong> The name you give an account
+  number — "Mom," "Landlord" — is stored privately against your account only. An account
+  number identifies a specific human being, so one person's label for it is never visible
+  to anyone else. This is enforced by the database schema, not by policy alone.</p>
+
+  <h2>How long data is kept, and how to delete it</h2>
+
+  <p>Your data is kept until you delete it.</p>
+
+  <p><strong>You can delete your account from inside the app</strong>, under Settings →
+  Delete my account. This immediately and permanently removes your account, every
+  transaction, every account record, and every counterparty label you created. It cannot
+  be undone and does not require contacting us.</p>
+
+  <p>Shared merchant-to-category pairings are not deleted, because they contain nothing
+  personal and nothing that can be traced to you.</p>
+
+  <h2>Security</h2>
+  <ul>
+    <li>All traffic between the app and the server uses HTTPS.</li>
+    <li>Every request must carry a valid signed token; the server verifies the signature
+      against our authentication provider's published keys on every request.</li>
+    <li>The database has row-level security enabled with no access policies, so the public
+      key shipped inside the app can read nothing. The application server is the only path
+      to data, and it filters every query by the signed-in user.</li>
+  </ul>
+  <p>No system is perfectly secure, and we do not claim otherwise.</p>
+
+  <h2>Children</h2>
+  <p>The app is not directed at children under 13 and we do not knowingly collect their
+  data.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes materially, the date at the top will change and the app will
+  tell you before the change takes effect.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy or about your data:
+  <strong>gantamirganta0729@gmail.com</strong></p>
+
+  <footer>
+    finance-tracking-app is a personal finance tracker for Mongolia. This page exists to give the
+    privacy policy a public URL for App Store listing purposes.
+  </footer>
+</main>
+</body>
+</html>
